@@ -23,3 +23,28 @@ std::string Order::toString() const
         m_timeStamp
     );
 }
+
+uint64_t Order::getId() const
+{
+    return m_orderId;
+}
+
+OrderSide Order::getSide() const
+{
+   return m_side; 
+}
+
+uint32_t Order::getPrice() const
+{
+    return m_price;
+}
+
+uint64_t Order::getQuantity() const
+{
+    return m_quantity;
+}
+
+TimeStamp Order::getTimeStamp() const
+{
+    return m_timeStamp;
+}

@@ -20,6 +20,11 @@ class Order
 {
 public:
     Order(OrderSide side, uint32_t price, uint64_t quantity);
+    uint64_t getId() const;
+    OrderSide getSide() const;
+    uint32_t getPrice() const;
+    uint64_t getQuantity() const;
+    TimeStamp getTimeStamp() const;
     std::string toString() const;
 private:
     uint64_t m_orderId;
