@@ -6,4 +6,5 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_executable(simulator
     src/main.cpp
     src/order.cpp
+	src/IdGeneration.cpp
 )
