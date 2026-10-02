@@ -29,6 +29,7 @@ public:
     uint32_t getPrice() const;
     uint64_t getQuantity() const;
     TimeStamp getTimeStamp() const;
+    void setQuanity(uint64_t quantity);
     std::string toString() const;
 private:
     uint64_t m_orderId;
