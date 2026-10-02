@@ -29,3 +29,13 @@ Order* OrderBook::bestBid() const
     }
     return m_bids.begin()->second.front();
 }
+
+void OrderBook::removeBestAsk()
+{
+    m_asks.erase(m_asks.begin());
+}
+
+void OrderBook::removeBestBid()
+{
+    m_bids.erase(m_bids.begin());
+}
