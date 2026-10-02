@@ -11,7 +11,11 @@ enum class OrderSide
 
 enum class OrderType
 {
-    LIMIT
+    LIMIT,      // Buy/Sell at this price or better
+    MARKET,     // Buy/Sell immediately at whatever is available.
+    IOC,        // Execute immediately as much as possible; cancel whatever remains
+    FOK,        // Execute the entire quantity immediately, or cancel the whole order
+    POST_ONLY   // Must rest in the book; if it would immediately trade, reject/cancel it
 };
 
 using TimeStamp = uint64_t;
@@ -32,4 +36,14 @@ private:
     uint32_t m_price;
     uint64_t m_quantity;
     TimeStamp m_timeStamp;
+};
+
+inline auto compareOrderAsc = [] (const Order& order1, const Order& order2)
+{
+    return order1.getId() > order2.getId();     
+};
+
+inline auto compareOrderDsc = [] (const Order& order1, const Order& order2)
+{
+    return order1.getId() < order2.getId();     
 };

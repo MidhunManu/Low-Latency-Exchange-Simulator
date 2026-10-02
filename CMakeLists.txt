@@ -8,6 +8,7 @@ add_executable(simulator
     src/main.cpp
     src/order.cpp
     src/IdGeneration.cpp
+    src/order_book.cpp
 )
 
 include(FetchContent)
@@ -24,8 +25,10 @@ enable_testing()
 
 add_executable(tests
     tests/order_test.cpp
+    tests/order_book_test.cpp
     src/order.cpp
     src/IdGeneration.cpp
+    src/order_book.cpp
 )
 
 target_link_libraries(tests
